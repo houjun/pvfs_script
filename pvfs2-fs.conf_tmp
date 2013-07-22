@@ -1,0 +1,51 @@
+<Defaults>
+	UnexpectedRequests 50
+	EventLogging none
+	EnableTracing no
+	LogStamp datetime
+	BMIModules bmi_tcp
+	FlowModules flowproto_multiqueue
+	PerfUpdateInterval 1000
+	ServerJobBMITimeoutSecs 30
+	ServerJobFlowTimeoutSecs 30
+	ClientJobBMITimeoutSecs 300
+	ClientJobFlowTimeoutSecs 300
+	ClientRetryLimit 5
+	ClientRetryDelayMilliSecs 2000
+	PrecreateBatchSize 512
+	PrecreateLowThreshold 256
+
+	StorageSpace /scratch/pvfs2-storage-space
+	LogFile /tmp/pvfs2-server.log
+</Defaults>
+
+<Aliases>
+	Alias HOST1 tcp://HOST1:3456
+	Alias HOST2 tcp://HOST2:3456
+	Alias HOST3 tcp://HOST3:3456
+	Alias HOST4 tcp://HOST4:3456
+</Aliases>
+
+<Filesystem>
+	Name pvfs2-fs
+	ID 1688215067
+	RootHandle 1048576
+	FileStuffing yes
+	<MetaHandleRanges>
+		Range HOST1 3-1152921504606846977
+		Range HOST2 1152921504606846978-2305843009213693952
+		Range HOST3 2305843009213693953-3458764513820540927
+		Range HOST4 3458764513820540928-4611686018427387902
+	</MetaHandleRanges>
+	<DataHandleRanges>
+		Range HOST1 4611686018427387903-5764607523034234877
+		Range HOST2 5764607523034234878-6917529027641081852
+		Range HOST3 6917529027641081853-8070450532247928827
+		Range HOST4 8070450532247928828-9223372036854775802
+	</DataHandleRanges>
+	<StorageHints>
+		TroveSyncMeta yes
+		TroveSyncData no
+		TroveMethod alt-aio
+	</StorageHints>
+</Filesystem>

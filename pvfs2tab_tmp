@@ -1,0 +1,4 @@
+tcp://HOST1:3456/pvfs2-fs /scratch/mnt/pvfs2 pvfs2 defaults,noauto 0 0
+tcp://HOST2:3456/pvfs2-fs /scratch/mnt/pvfs2 pvfs2 defaults,noauto 0 0
+tcp://HOST3:3456/pvfs2-fs /scratch/mnt/pvfs2 pvfs2 defaults,noauto 0 0
+tcp://HOST4:3456/pvfs2-fs /scratch/mnt/pvfs2 pvfs2 defaults,noauto 0 0
